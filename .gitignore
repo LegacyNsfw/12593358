@@ -1,3 +1,7 @@
 12593358.idc
 *.idb
+*.id0
+*.id1
+*.nam
+*.til
 LocalOnly
