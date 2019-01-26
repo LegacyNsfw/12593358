@@ -8,13 +8,13 @@ The PCM itself is part number 12200411. Widely known as the "411" for short, or 
 
 **12593358.bin** - This is the firmware image from my PCM, as extracted by the PCM Hammer app.
 
-**12202088.annotated.asm** - This was created by someone who went by the alias Dimented24x7 on a couple of car forums. Nobody has heard from him in a long time, which is unfortunate because he contributed an enormous amount while he was around. This was created from a different operating system for the same PCM, but they're similar enough. This was extremely helpful in the beginning. 
+**Reference\12202088.annotated.asm** - This was created by someone who went by the alias Dimented24x7 on a couple of car forums. Nobody has heard from him in a long time, which is unfortunate because he contributed an enormous amount while he was around. This was created from a different operating system for the same PCM, but they're similar enough. This was extremely helpful in the beginning. 
 
-**12593358.xdf** - This was created by cmaje72, who as I write this is still active on pcmhacking.net. He located a bunch of tables and constants in the PCM, and produced this XDF file for use with Tuner Pro. 
+**Reference\12593358.xdf** - This was created by cmaje72, who as I write this is still active on pcmhacking.net. He located a bunch of tables and constants in the PCM, and produced this XDF file for use with Tuner Pro. 
 
-**PidList.txt** - This was posted to the HPTuners forum in 2003 by a user who went by "beerman" over there. 
+**Reference]PidList.txt** - This was posted to the HPTuners forum in 2003 by a user who went by "beerman" over there. 
 
-**Convert-XdfToIdc.ps1** - I wrote this little PowerShell script to convert the tables in the above XDF file to an IDC script, which IDA uses to label the memory locations of those tables and constants.
+**Scripts\Convert-XdfToIdc.ps1** - I wrote this little PowerShell script to convert the tables in the above XDF file to an IDC script, which IDA uses to label the memory locations of those tables and constants.
 
-**Generate-Obd2Idc.ps1** - This uses the parameter IDs and names in PidList.txt (plus the address of an array that was found manually) to label a bunch of functions that look up various parameters. 
+**Scripts\Generate-Obd2Idc.ps1** - This uses the parameter IDs and names in PidList.txt (plus the address of an array that was found manually) to label a bunch of functions that look up various parameters. 
 
