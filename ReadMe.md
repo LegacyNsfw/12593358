@@ -16,5 +16,5 @@ The PCM itself is part number 12200411. Widely known as the "411" for short, or 
 
 **Scripts/Convert-XdfToIdc.ps1** - I wrote this little PowerShell script to convert the tables in the above XDF file to an IDC script, which IDA uses to label the memory locations of those tables and constants.
 
-**Scripts/Generate-Obd2Idc.ps1** - This uses the parameter IDs and names in PidList.txt (plus the address of an array that was found manually) to label a bunch of functions that look up various parameters. 
+**Scripts/Generate-PidLabels.ps1** - This uses the parameter IDs and names in PidList.txt (plus the address of an array that was found manually) to label a bunch of functions that look up various parameters. 
 
