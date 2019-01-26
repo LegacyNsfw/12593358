@@ -2,7 +2,7 @@
 
 The PCM itself is part number 12200411. Widely known as the "411" for short, or the "P01" (WTF?) these can be found in a variety of V8 (and perhaps V6) GM vehicles in the late 1990s and early 2000s.
 
-### Files
+### Contents
 
 **12593358.sanitized.idc** - This is the main thing. It can be loaded into IDA Pro to show you everything I've found so far. 
 
