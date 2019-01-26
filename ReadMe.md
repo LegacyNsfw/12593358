@@ -6,6 +6,8 @@ The PCM itself is part number 12200411. Widely known as the "411" for short, or 
 
 12593358.idc - This is the main thing. It can be loaded into IDA Pro to show you everything I've found so far. 
 
+12593358.bin - This is the firmware image from my PCM, as extracted by the PCM Hammer app.
+
 12202088.annotated.asm - This was created by someone who went by the alias Dimented24x7 on a couple of car forums. Nobody has heard from him in a long time, which is unfortunate because he contributed an enormous amount while he was around. This was created from a different operating system for the same PCM, but they're similar enough. This was extremely helpful in the beginning. 
 
 12593358.xdf - This was created by cmaje72, who as I write this is still active on pcmhacking.net. He located a bunch of tables and constants in the PCM, and produced this XDF file for use with Tuner Pro. 
