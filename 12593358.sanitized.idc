@@ -537,6 +537,12 @@ static Bytes_0(void) {
 	MakeDword	(x=0X258);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+	MakeDword	(x=0X3F8);
+	OpOff		(x,	0,	0);
+	OpOff		(x,	128,	0);
+	MakeDword	(x=0X3FC);
+	OpOff		(x,	0,	0);
+	OpOff		(x,	128,	0);
 	MakeDword	(x=0X400);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -998,7 +1004,7 @@ static Bytes_0(void) {
 	MakeName	(0X12E4,	"InitializeMemory?");
 	MakeCode	(0X14A8);
 	MakeCode	(0X14D4);
-	MakeRptCmt	(0X14E2,	"c = 12 = Use the y-body column");
+	MakeRptCmt	(0X14E2,	"c = 12 = Use the y-body column\nNextXDF: Make a constant for this value, so users can select other columns.");
 	MakeCode	(x=0X14E6);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -4313,6 +4319,13 @@ static Bytes_0(void) {
 	MakeByte	(0X14EFD);
 	MakeDword	(0X14F08);
 	MakeWord	(0X14F0C);
+}
+
+
+static Bytes_1(void) {
+        auto x;
+#define id x
+
 	MakeWord	(0X14F0E);
 	MakeWord	(0X14F10);
 	MakeWord	(0X14F12);
@@ -4327,13 +4340,6 @@ static Bytes_0(void) {
 	MakeWord	(0X14F24);
 	MakeWord	(0X14F26);
 	MakeWord	(0X14F28);
-}
-
-
-static Bytes_1(void) {
-        auto x;
-#define id x
-
 	MakeWord	(0X14F2A);
 	MakeWord	(0X14F2C);
 	MakeWord	(0X14F2E);
@@ -7148,6 +7154,7 @@ static Bytes_1(void) {
 	OpSign		(x,	1);
 	OpOff		(x,	1,	0);
 	OpOff		(x,	129,	0);
+	MakeRptCmt	(0X21906,	"Operating system entry point?");
 	MakeCode	(0X2194A);
 	MakeCode	(x=0X21976);
 	OpOff		(x,	0,	0);
@@ -7536,6 +7543,13 @@ static Bytes_1(void) {
 	MakeCode	(x=0X229E6);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+}
+
+
+static Bytes_2(void) {
+        auto x;
+#define id x
+
 	MakeCode	(x=0X229F6);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -7552,13 +7566,6 @@ static Bytes_1(void) {
 	OpStkvar	(x,	0);
 	OpOff		(x,	1,	0);
 	OpOff		(x,	129,	0);
-}
-
-
-static Bytes_2(void) {
-        auto x;
-#define id x
-
 	MakeCode	(x=0X22A44);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -9497,6 +9504,7 @@ static Bytes_2(void) {
 	OpStkvar	(x,	1);
 	MakeCode	(x=0X28C44);
 	OpStkvar	(x,	0);
+	MakeRptCmt	(0X28C6A,	"Ordinary usage?");
 	MakeCode	(0X28C72);
 	MakeCode	(x=0X28C7E);
 	OpOff		(x,	0,	0);
@@ -10630,9 +10638,12 @@ static Bytes_2(void) {
 	MakeName	(0X2F9A6,	"ClearStuff?");
 	MakeCode	(0X2F9BE);
 	MakeCode	(0X2F9C2);
+	MakeRptCmt	(0X2F9CE,	"Initializing?");
 	MakeCode	(0X2F9E0);
+	MakeRptCmt	(0X2FA18,	"Initializing?");
 	MakeCode	(0X2FA5A);
 	MakeCode	(0X2FA5C);
+	MakeRptCmt	(0X2FA76,	"Initializing?");
 	MakeCode	(0X2FA92);
 	MakeCode	(0X2FAA4);
 	MakeCode	(0X2FAC0);
@@ -13312,6 +13323,13 @@ static Bytes_2(void) {
 	MakeCode	(x=0X3BDA8);
 	OpOff		(x,	1,	0);
 	OpOff		(x,	129,	0);
+}
+
+
+static Bytes_3(void) {
+        auto x;
+#define id x
+
 	MakeCode	(x=0X3BDB0);
 	OpOff		(x,	1,	0);
 	OpOff		(x,	129,	0);
@@ -13338,13 +13356,6 @@ static Bytes_2(void) {
 	MakeCode	(x=0X3BF0A);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
-}
-
-
-static Bytes_3(void) {
-        auto x;
-#define id x
-
 	MakeCode	(0X3BF24);
 	MakeCode	(0X3BF2E);
 	MakeCode	(x=0X3BF40);
@@ -17158,6 +17169,7 @@ static Bytes_3(void) {
 	MakeName	(0X456D2,	"GetPid_000C_EngineRPMHighResolutionRPMx");
 	MakeCode	(0X456DE);
 	MakeName	(0X456DE,	"GetPid_000B_ManifoldAbsolutePressure");
+	MakeRptCmt	(0X456E4,	"0x33 = 51");
 	MakeCode	(0X456EA);
 	MakeName	(0X456EA,	"GetPid_0009_LongTermFuelTrimBank");
 	MakeCode	(0X4570E);
@@ -18618,6 +18630,13 @@ static Bytes_3(void) {
 	MakeCode	(0X4D642);
 	MakeCode	(0X4D64A);
 	MakeCode	(0X4D64E);
+}
+
+
+static Bytes_4(void) {
+        auto x;
+#define id x
+
 	MakeCode	(0X4D6C4);
 	MakeCode	(0X4D6D8);
 	MakeCode	(0X4D6EC);
@@ -18647,13 +18666,6 @@ static Bytes_3(void) {
 	MakeCode	(0X4DCA6);
 	MakeCode	(0X4DCBA);
 	MakeCode	(0X4DD28);
-}
-
-
-static Bytes_4(void) {
-        auto x;
-#define id x
-
 	MakeCode	(0X4DD3C);
 	MakeCode	(0X4DD50);
 	MakeCode	(0X4DDBE);
@@ -24612,6 +24624,13 @@ static Bytes_4(void) {
 	MakeCode	(x=0X6A320);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+}
+
+
+static Bytes_5(void) {
+        auto x;
+#define id x
+
 	MakeCode	(0X6A342);
 	MakeCode	(x=0X6A348);
 	OpOff		(x,	0,	0);
@@ -24639,13 +24658,6 @@ static Bytes_4(void) {
 	MakeCode	(x=0X6A48C);
 	OpStkvar	(x,	1);
 	MakeCode	(0X6A4CA);
-}
-
-
-static Bytes_5(void) {
-        auto x;
-#define id x
-
 	MakeCode	(0X6A4E8);
 	MakeCode	(x=0X6A4FA);
 	OpOff		(x,	0,	0);
@@ -26374,12 +26386,14 @@ static Bytes_5(void) {
 	MakeCode	(0X6FDAC);
 	MakeCode	(x=0X6FDCA);
 	OpSign		(x,	1);
+	MakeName	(0X6FDCA,	"Get_VE_1");
 	MakeCode	(0X6FDEC);
 	MakeCode	(x=0X6FDF6);
 	OpStkvar	(x,	1);
 	MakeCode	(x=0X6FDFC);
 	OpStkvar	(x,	1);
 	MakeCode	(0X6FE3C);
+	MakeRptCmt	(0X6FE4A,	"d0 = RpmIndex");
 	MakeCode	(x=0X6FE4C);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -26444,6 +26458,7 @@ static Bytes_5(void) {
 	MakeCode	(x=0X7042C);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+	MakeRptCmt	(0X70432,	"d0 = RpmIndex");
 	MakeCode	(x=0X70466);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -26555,6 +26570,7 @@ static Bytes_5(void) {
 	MakeCode	(0X70B50);
 	MakeCode	(0X70B60);
 	MakeCode	(0X70B68);
+	MakeName	(0X70B68,	"Get_VE_2");
 	MakeRptCmt	(0X70B74,	"Clear");
 	MakeCode	(0X70B88);
 	MakeCode	(0X70BA6);
@@ -30582,6 +30598,13 @@ static Bytes_5(void) {
 	MakeDword	(x=0X7F258);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+}
+
+
+static Bytes_6(void) {
+        auto x;
+#define id x
+
 	MakeDword	(x=0X7F25C);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -30617,13 +30640,6 @@ static Bytes_5(void) {
 	MakeDword	(x=0X7F28C);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
-}
-
-
-static Bytes_6(void) {
-        auto x;
-#define id x
-
 	MakeDword	(x=0X7F290);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -30916,6 +30932,7 @@ static Bytes_6(void) {
 	MakeByte	(0XFFB118);
 	MakeWord	(0XFFB11A);
 	MakeWord	(0XFFB11C);
+	MakeName	(0XFFFF824A,	"ManifoldPressure?_UsedForVeLookup");
 	MakeName	(0XFFFF904A,	"AcceleratorPedalPosition?");
 	MakeName	(0XFFFF935A,	"Pid_1942_TransmissionOutputShaftSpeed");
 	MakeName	(0XFFFF9368,	"Pid_1941_TransmissionInputShaftSpeed");
@@ -30931,8 +30948,11 @@ static Bytes_6(void) {
 	MakeByte	(0XFFFF9F8C);
 	MakeWord	(0XFFFF9F92);
 	MakeName	(0XFFFF9F98,	"OpenLoopTargetAFR");
+	MakeName	(0XFFFF9F9C,	"OpenLoopCompensation1");
 	MakeByte	(0XFFFF9F9E);
-	MakeName	(0XFFFFA0C0,	"RpmIndex_Or_Actual?");
+	MakeName	(0XFFFF9FA6,	"OpenLoopCompensation3");
+	MakeName	(0XFFFF9FB6,	"OpenLoopCompensation2");
+	MakeName	(0XFFFFA0C0,	"Pid_000C_EngineSpeedIn5xRpm");
 	MakeName	(0XFFFFA1C0,	"Pid_0011_TPS2");
 	MakeName	(0XFFFFA6CE,	"Pid_0011_1151_ThrottlePositionSensor");
 	MakeName	(0XFFFFA6D0,	"MAP?");
@@ -30956,6 +30976,8 @@ static Bytes_6(void) {
 	MakeName	(0XFFFFAAF8,	"ManifoldAbsolutePressureIndex");
 	MakeName	(0XFFFFABCE,	"Pid_000D_VehicleSpeed");
 	MakeName	(0XFFFFAD1A,	"Pid_11A1_EngineRunTime");
+	MakeName	(0XFFFFADB4,	"VE_MAP_AxisValue");
+	MakeName	(0XFFFFADB6,	"GetsCopiedToVeMapIndex");
 	MakeName	(0XFFFFADB8,	"Pid_000B_ManifoldAbsolutePressure");
 	MakeByte	(0XFFFFADC1);
 	MakeByte	(0XFFFFADC2);
@@ -31522,7 +31544,7 @@ static Functions_0(void) {
 	MakeFunction    (0X2F49C,0X2F50A);
 	SetFunctionFlags(0X2F49C,0x10);
 	MakeFrame(0X2F49C, 0X6, 4, 0);
-	MakeFunction    (0X2F50A,0X2F6AC);
+	MakeFunction    (0X2F50A,0X2F6AA);
 	SetFunctionFlags(0X2F50A,0);
 	MakeFunction    (0X2F6AC,0X2F6F8);
 	SetFunctionFlags(0X2F6AC,0);
