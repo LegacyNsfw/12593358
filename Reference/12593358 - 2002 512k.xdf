@@ -1117,6 +1117,40 @@
       <VAR id="X" />
     </MATH>
   </XDFCONSTANT>
+
+  <XDFCONSTANT uniqueid="0xE38AA" flags="0xC">
+    <title>MAP Sensor Scaling / Multiplier</title>
+    <CATEGORYMEM index="0" category="4" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x16D2C" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>Scaling</units>
+    <decimalpl>5</decimalpl>
+    <rangehigh>100.000000</rangehigh>
+    <rangelow>-100.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="X*0.0000152587890625">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+
+  <XDFCONSTANT uniqueid="0xE38AB" flags="0xC">
+    <title>MAP Sensor Offset</title>
+    <CATEGORYMEM index="0" category="4" />
+    <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x16D2E" mmedelementsizebits="16" mmedmajorstridebits="0" mmedminorstridebits="0" />
+    <units>Offset</units>
+    <decimalpl>5</decimalpl>
+    <rangehigh>100.000000</rangehigh>
+    <rangelow>-100.000000</rangelow>
+    <datatype>0</datatype>
+    <unittype>0</unittype>
+    <DALINK index="0" />
+    <MATH equation="X*0.0000152587890625">
+      <VAR id="X" />
+    </MATH>
+  </XDFCONSTANT>
+
+
   <XDFCONSTANT uniqueid="0xE38" flags="0xC">
     <title>Fan 1 On Coolant Temp.</title>
     <CATEGORYMEM index="0" category="4" />

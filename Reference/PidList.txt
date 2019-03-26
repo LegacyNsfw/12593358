@@ -37,8 +37,8 @@
 0031 
 1104 
 1105 
-1106 
-1107 
+1106 VTD Fuel Disable
+1107 Throttle At Idle
 1108 
 1109 
 110A 
@@ -62,6 +62,7 @@
 1146 O2 Sensor - Bank 1 Sensor 2 (mv)
 1148 O2 Sensor - Bank 2 Sensor 1 (mv)
 1149 O2 Sensor - Bank 2 Sensor 2 (mv)
+114E Fuel Tank Pressure
 1151 Throttle Position Sensor Normalized in Degrees / Percent
 115E CAM Engine Speed Activity
 116F Start Up Engine Coolant Temperature
@@ -75,8 +76,10 @@
 119E Air Fuel Ratio
 11A1 Engine Run Time
 11A3 
+11BB EGR Closed Position Volts
 11BD EGR Test Count
 11C0 EGR Decel Filter
+11C1 EGR Position Error
 11C2 
 11C4 
 11D5 
@@ -148,6 +151,7 @@
 124B 
 124D 
 124E 
+1250 MAF Frequency (Hz)
 1257 
 1258 Rear O2 Time to Activity
 1259 
@@ -206,6 +210,7 @@
 12BF 
 12C0 
 12C1 
+12C5 Fuel Level Percentage
 1601 A/C Evap Temp
 1602 Engine Oil Temperature
 1920 
@@ -221,6 +226,7 @@
 192A 
 192B 
 192C 
+1940 Transmission Oil Temperature
 1941 Transmission Input Shaft Speed
 1942 Transmission Output Shaft Speed
 1970 TCC PWM Duty Cycle

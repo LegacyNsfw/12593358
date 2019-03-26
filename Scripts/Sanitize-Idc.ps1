@@ -1,4 +1,6 @@
-$lines = [IO.File]::ReadAllLines("..\12593358.idc")
+param($path)
+
+$lines = [IO.File]::ReadAllLines($path)
 
 $builder = New-Object -TypeName "System.Text.StringBuilder";
 
@@ -10,4 +12,5 @@ foreach($line in $lines)
 	}
 }
 
-Out-File -FilePath ("..\12593358.sanitized.idc") -InputObject $builder.ToString() -Encoding ASCII
+$name = [System.IO.Path]::GetFileNameWithoutExtension($path)
+Out-File -FilePath ($name + ".sanitized.idc") -InputObject $builder.ToString() -Encoding ASCII

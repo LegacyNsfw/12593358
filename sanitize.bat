@@ -1,3 +1,2 @@
-pushd Scripts
-powershell .\Sanitize-Idc.ps1
-popd
+powershell .\Scripts\Sanitize-Idc.ps1 12593358.idc
+
