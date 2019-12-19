@@ -1121,6 +1121,9 @@ static Bytes_0(void) {
 	MakeWord	(0X160E);
 	MakeCode	(0X1610);
 	MakeName	(0X1610,	"LookupSurfaceValue");
+	MakeRptCmt	(0X1614,	"d3 = ((d1 >> 8) * d2) + d3");
+	MakeRptCmt	(0X1616,	"a0 = row in the table");
+	MakeRptCmt	(0X161A,	"find d0 in array pointed at by a0, put result in d0\n(In other words, get the table X offset)");
 	MakeDword	(x=0X1634);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -2177,6 +2180,8 @@ static Bytes_0(void) {
 	MakeWord	(0X87F4);
 	MakeWord	(0X87F8);
 	MakeWord	(0X87FA);
+	MakeWord	(0X8800);
+	MakeWord	(0X8802);
 	MakeWord	(0X8814);
 	MakeWord	(0X8816);
 	MakeWord	(0X8818);
@@ -3483,6 +3488,7 @@ static Bytes_0(void) {
 	MakeWord	(0X11770);
 	MakeWord	(0X11772);
 	MakeWord	(0X11774);
+	MakeName	(0X11774,	"IgnitionAdvanceMultiplier_BasedOn_ECT_PreviouslyUndefined");
 	MakeName	(0X117C4,	"CurveTable_17_Rows_AFR_Spark_Advance_Multiplier_Vs._MAP");
 	MakeName	(0X117E6,	"CurveTable_21_Rows_IAT_Spark_Advance_Multiplier_Vs._RPM");
 	MakeWord	(0X11810);
@@ -3572,6 +3578,7 @@ static Bytes_0(void) {
 	MakeWord	(0X12A52);
 	MakeByte	(0X12A54);
 	MakeWord	(0X12A56);
+	MakeName	(0X12A56,	"Zero_16bit");
 	MakeByte	(0X12A58);
 	MakeByte	(0X12A59);
 	MakeWord	(0X12A5A);
@@ -3610,10 +3617,14 @@ static Bytes_0(void) {
 	MakeWord	(0X12B98);
 	MakeWord	(0X12BAC);
 	MakeWord	(0X12BC2);
+	MakeName	(0X12BC2,	"FixedPointOne");
 	MakeWord	(0X12BC4);
+	MakeName	(0X12BC4,	"UndefinedTable");
 	MakeWord	(0X12C02);
+	MakeName	(0X12C02,	"IAM_IncreaseStep");
 	MakeWord	(0X12C04);
 	MakeWord	(0X12C06);
+	MakeName	(0X12C06,	"IAM_DecreaseStep");
 	MakeByte	(0X12C08);
 	MakeWord	(0X12C0A);
 	MakeByte	(0X12C0C);
@@ -4090,6 +4101,7 @@ static Bytes_0(void) {
 	MakeWord	(0X1458E);
 	MakeWord	(0X14590);
 	MakeWord	(0X14592);
+	MakeName	(0X14592,	"MAF_Low_Limit?");
 	MakeWord	(0X14594);
 	MakeWord	(0X14596);
 	MakeWord	(0X14598);
@@ -4291,6 +4303,13 @@ static Bytes_0(void) {
 	MakeWord	(0X14C1C);
 	MakeWord	(0X14C1E);
 	MakeWord	(0X14C20);
+}
+
+
+static Bytes_1(void) {
+        auto x;
+#define id x
+
 	MakeWord	(0X14C22);
 	MakeWord	(0X14C2A);
 	MakeWord	(0X14C32);
@@ -4335,13 +4354,6 @@ static Bytes_0(void) {
 	MakeWord	(0X14CE0);
 	MakeWord	(0X14CE2);
 	MakeName	(0X14CE2,	"Constant16_TPS_Diagnostic_(P0121)_Min_MAP");
-}
-
-
-static Bytes_1(void) {
-        auto x;
-#define id x
-
 	MakeWord	(0X14CE4);
 	MakeName	(0X14CE4,	"Constant16_TPS_Diagnostic_(P0121)_Max_MAP");
 	MakeWord	(0X14CE6);
@@ -6800,6 +6812,7 @@ static Bytes_1(void) {
 	MakeByte	(0X1EEDC);
 	MakeWord	(0X1EEDE);
 	MakeWord	(0X1EEE0);
+	MakeName	(0X1EEE0,	"Const_0x1000");
 	MakeName	(0X1EF9F,	"EndSpeedometerSection");
 	MakeRptCmt	(0X1EFA0,	"ROM HOLE - Calibration\n1EFA0 - 1FFFFF \nLength is 0x105F / 4191\n\nMight be able to use the previous range of FF bytes as well.");
 	MakeCode	(x=0X20000);
@@ -7487,6 +7500,13 @@ static Bytes_1(void) {
 	MakeCode	(x=0X22376);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+}
+
+
+static Bytes_2(void) {
+        auto x;
+#define id x
+
 	MakeCode	(x=0X2237E);
 	OpStkvar	(x,	1);
 	MakeCode	(x=0X22384);
@@ -7539,13 +7559,6 @@ static Bytes_1(void) {
 	OpStkvar	(x,	1);
 	MakeCode	(x=0X22418);
 	OpStkvar	(x,	1);
-}
-
-
-static Bytes_2(void) {
-        auto x;
-#define id x
-
 	MakeCode	(x=0X2241E);
 	OpStkvar	(x,	1);
 	MakeCode	(x=0X22424);
@@ -8424,6 +8437,7 @@ static Bytes_2(void) {
 	MakeCode	(0X25472);
 	MakeCode	(0X25484);
 	MakeCode	(0X254AC);
+	MakeRptCmt	(0X254B4,	"used for table lookup");
 	MakeCode	(x=0X254BA);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -8704,7 +8718,7 @@ static Bytes_2(void) {
 	MakeCode	(0X26466);
 	MakeCode	(0X2647C);
 	MakeCode	(0X264B6);
-	MakeName	(0X264B6,	"TableLookupUnsigned");
+	MakeName	(0X264B6,	"SurfaceLookupUnsigned");
 	MakeRptCmt	(0X264C2,	"unsigned, not rounded");
 	MakeRptCmt	(0X264C6,	"unsigned, not rounded");
 	MakeRptCmt	(0X264CC,	"unsigned, rounded");
@@ -11990,7 +12004,9 @@ static Bytes_2(void) {
 	MakeCode	(0X36364);
 	MakeCode	(0X3637A);
 	MakeCode	(0X36384);
+	MakeName	(0X36384,	"GetSparkAdvance");
 	MakeRptCmt	(0X363AE,	"SurfaceTable_13x29_Base_Spark_Adv__Vs__Load_Vs__RPM__Closed_Throt__In_P_N");
+	MakeName	(0X363AE,	"ParkOrNeutral");
 	MakeCode	(x=0X363B8);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -12002,8 +12018,14 @@ static Bytes_2(void) {
 	MakeCode	(0X36418);
 	MakeRptCmt	(0X36422,	" SurfaceTable_25x29_Spark_Advance_Vs__Load_Vs__RPM__Open_Throt__Low_Oct");
 	MakeRptCmt	(0X36428,	" SurfaceTable_25x29_Spark_Advance_Vs__Load_Vs__RPM__Open_Throt__Low_Oct");
+	MakeRptCmt	(0X3642E,	"Get low-octane spark advance");
 	MakeRptCmt	(0X3643A,	"SurfaceTable_25x29_Spark_Advance_Vs__Load_Vs__RPM__Open_Throt__High_Oct");
 	MakeRptCmt	(0X36440,	"That's the spark table, why is there no xref?");
+	MakeRptCmt	(0X36446,	"Get high-octane spark advance");
+	MakeRptCmt	(0X3644E,	"Base of the IAM value. This is 1.0 in fixed-point.");
+	MakeRptCmt	(0X3645E,	"Store the ignition advance multiplier");
+	MakeRptCmt	(0X36468,	"Subtract low-octane advance from high octane advance?");
+	MakeRptCmt	(0X3646A,	"Multiply the difference by the current dynamic advance value.");
 	MakeCode	(0X364A0);
 	MakeRptCmt	(0X364C0,	"SurfaceTable_13x29_Base_Spark_Adv__Vs__Load_Vs__RPM__Closed_Throt__In_P_N");
 	MakeCode	(x=0X364CA);
@@ -12325,6 +12347,7 @@ static Bytes_2(void) {
 	MakeCode	(0X37A18);
 	MakeCode	(0X37A52);
 	MakeCode	(0X37A76);
+	MakeRptCmt	(0X37A7A,	"use for table lookup");
 	MakeCode	(x=0X37A8A);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -12450,6 +12473,7 @@ static Bytes_2(void) {
 	MakeCode	(x=0X3818E);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+	MakeRptCmt	(0X381BA,	"Read");
 	MakeCode	(0X381F8);
 	MakeCode	(0X38204);
 	MakeCode	(x=0X38246);
@@ -12560,14 +12584,20 @@ static Bytes_2(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(0X389F6);
+	MakeName	(0X389F6,	"GetIgnitionAdvanceMultiplier");
+	MakeRptCmt	(0X38A0A,	"Clear");
 	MakeCode	(0X38A12);
+	MakeRptCmt	(0X38A1A,	"Set to default (zero)");
 	MakeCode	(0X38A26);
 	MakeRptCmt	(0X38A32,	"SurfaceTable_25x29_Spark_Advance_Vs__Load_Vs__RPM__Open_Throt__High_Oct");
 	MakeRptCmt	(0X38A4A,	"SurfaceTable_25x29_Spark_Advance_Vs__Load_Vs__RPM__Open_Throt__Low_Oct");
+	MakeRptCmt	(0X38A5E,	"d3 = difference between high and low tables");
 	MakeCode	(0X38A6E);
 	MakeCode	(0X38A84);
 	MakeCode	(0X38A88);
+	MakeRptCmt	(0X38ABA,	"Set IAM");
 	MakeCode	(0X38AC0);
+	MakeRptCmt	(0X38AD6,	"Read prior to decrease");
 	MakeCode	(0X38AE2);
 	MakeCode	(0X38AE6);
 	MakeCode	(0X38AEC);
@@ -12600,13 +12630,16 @@ static Bytes_2(void) {
 	MakeCode	(0X38D28);
 	MakeCode	(x=0X38D54);
 	OpStkvar	(x,	1);
+	MakeRptCmt	(0X38D6C,	"Set IAM to 1.0");
 	MakeCode	(0X38D76);
 	MakeCode	(x=0X38D96);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(0X38DB8);
+	MakeRptCmt	(0X38DBA,	"Set IAM Value");
 	MakeCode	(x=0X38DC6);
 	OpSign		(x,	1);
+	MakeName	(0X38DC6,	"RescaleThenTableLookup?");
 	MakeCode	(0X38DE0);
 	MakeCode	(0X38DFE);
 	MakeCode	(0X38E02);
@@ -13191,6 +13224,13 @@ static Bytes_2(void) {
 	MakeCode	(x=0X3B1EC);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+}
+
+
+static Bytes_3(void) {
+        auto x;
+#define id x
+
 	MakeCode	(x=0X3B1F2);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -13312,13 +13352,6 @@ static Bytes_2(void) {
 	MakeCode	(x=0X3BA3C);
 	OpOff		(x,	1,	0);
 	OpOff		(x,	129,	0);
-}
-
-
-static Bytes_3(void) {
-        auto x;
-#define id x
-
 	MakeCode	(x=0X3BA42);
 	OpStkvar	(x,	1);
 	MakeCode	(x=0X3BA48);
@@ -13890,6 +13923,8 @@ static Bytes_3(void) {
 	MakeName	(0X3D0D4,	"HandleMode35");
 	MakeCode	(0X3D0F8);
 	MakeCode	(0X3D102);
+	MakeRptCmt	(0X3D104,	"Max RPM for mode-35 data transfer");
+	MakeRptCmt	(0X3D10C,	"Max vehicle speed for mode-35 data transfer");
 	MakeCode	(0X3D11E);
 	MakeCode	(0X3D174);
 	MakeCode	(x=0X3D192);
@@ -17188,8 +17223,12 @@ static Bytes_3(void) {
 	MakeCode	(x=0X456A8);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+	MakeRptCmt	(0X456D2,	"Read for OBD2");
 	MakeCode	(0X456D2);
 	MakeName	(0X456D2,	"GetPid_000C_EngineRPMHighResolutionRPMx");
+	MakeRptCmt	(0X456D6,	"multiply by 25");
+	MakeRptCmt	(0X456DA,	"divide by 16 (net effect is multiply by 1.5625 ?)");
+	MakeRptCmt	(0X456DC,	"result = RPM / 64");
 	MakeCode	(0X456DE);
 	MakeName	(0X456DE,	"GetPid_000B_ManifoldAbsolutePressure");
 	MakeRptCmt	(0X456E0,	"Read for OBD2");
@@ -18426,6 +18465,13 @@ static Bytes_3(void) {
 	MakeCode	(0X4AD0E);
 	MakeCode	(0X4AD1C);
 	MakeName	(0X4AD1C,	"AutoTrans_30");
+}
+
+
+static Bytes_4(void) {
+        auto x;
+#define id x
+
 	MakeCode	(x=0X4AD8A);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -18567,13 +18613,6 @@ static Bytes_3(void) {
 	MakeCode	(0X4C0AA);
 	MakeCode	(0X4C0E2);
 	MakeCode	(0X4C15C);
-}
-
-
-static Bytes_4(void) {
-        auto x;
-#define id x
-
 	MakeCode	(0X4C174);
 	MakeCode	(0X4C1C0);
 	MakeCode	(0X4C210);
@@ -23201,7 +23240,7 @@ static Bytes_4(void) {
 	MakeCode	(0X64B84);
 	MakeCode	(0X64B92);
 	MakeCode	(0X64BA8);
-	MakeName	(0X64BA8,	"Check_MAF_Max_Frequency");
+	MakeName	(0X64BA8,	"Check_MAF_Frequency_Range");
 	MakeCode	(0X64BEE);
 	MakeCode	(0X64C28);
 	MakeCode	(0X64C42);
@@ -24401,6 +24440,13 @@ static Bytes_4(void) {
 	MakeCode	(x=0X69638);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+}
+
+
+static Bytes_5(void) {
+        auto x;
+#define id x
+
 	MakeCode	(x=0X69642);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -24550,13 +24596,6 @@ static Bytes_4(void) {
 	OpStkvar	(x,	0);
 	MakeCode	(x=0X69CA6);
 	OpStkvar	(x,	1);
-}
-
-
-static Bytes_5(void) {
-        auto x;
-#define id x
-
 	MakeCode	(x=0X69CBC);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -26400,13 +26439,14 @@ static Bytes_5(void) {
 	MakeCode	(0X6FDAC);
 	MakeCode	(x=0X6FDCA);
 	OpSign		(x,	1);
-	MakeName	(0X6FDCA,	"Get_VE_1");
+	MakeName	(0X6FDCA,	"GetBlendedAirflowValueFromMafAndVE");
 	MakeCode	(0X6FDEC);
 	MakeCode	(x=0X6FDF6);
 	OpStkvar	(x,	1);
 	MakeCode	(x=0X6FDFC);
 	OpStkvar	(x,	1);
 	MakeCode	(0X6FE3C);
+	MakeRptCmt	(0X6FE46,	"0x800 = 2048");
 	MakeRptCmt	(0X6FE4A,	"d0 = RpmIndex");
 	MakeCode	(x=0X6FE4C);
 	OpOff		(x,	0,	0);
@@ -26584,7 +26624,7 @@ static Bytes_5(void) {
 	MakeCode	(0X70B50);
 	MakeCode	(0X70B60);
 	MakeCode	(0X70B68);
-	MakeName	(0X70B68,	"Get_VE_2");
+	MakeName	(0X70B68,	"Get_VE");
 	MakeRptCmt	(0X70B74,	"Clear");
 	MakeCode	(0X70B88);
 	MakeCode	(0X70BA6);
@@ -27206,8 +27246,11 @@ static Bytes_5(void) {
 	MakeCode	(x=0X740EC);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+	MakeRptCmt	(0X7411A,	"Assign");
+	MakeRptCmt	(0X74120,	"Clear");
 	MakeCode	(0X74120);
 	MakeCode	(0X74134);
+	MakeRptCmt	(0X74138,	"Assign. = Pid_000C_RPM << 3, so max value is 8192");
 	MakeCode	(0X7414E);
 	MakeCode	(0X74164);
 	MakeCode	(0X74178);
@@ -27664,8 +27707,10 @@ static Bytes_5(void) {
 	MakeCode	(0X76690);
 	MakeCode	(0X766BC);
 	MakeCode	(0X766E4);
+	MakeName	(0X766E4,	"Set_ManifoldAbsolutePressure_By_Other_Means");
 	MakeCode	(0X76708);
 	MakeCode	(0X76738);
+	MakeRptCmt	(0X7673A,	"assign");
 	MakeCode	(0X7674E);
 	MakeCode	(0X76758);
 	MakeCode	(0X76786);
@@ -27685,7 +27730,6 @@ static Bytes_5(void) {
 	MakeCode	(x=0X7682A);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
-	MakeRptCmt	(0X76846,	"Turn this JSR into NOP in order to skip the MAF Hz testing.");
 	MakeCode	(x=0X76856);
 	OpStkvar	(x,	0);
 	MakeCode	(0X76868);
@@ -28655,6 +28699,7 @@ static Bytes_5(void) {
 	MakeCode	(0X7A17A);
 	MakeCode	(0X7A1AA);
 	MakeCode	(0X7A1DC);
+	MakeRptCmt	(0X7A1E0,	"Assign");
 	MakeCode	(0X7A20C);
 	MakeCode	(0X7A236);
 	MakeCode	(x=0X7A248);
@@ -30333,6 +30378,13 @@ static Bytes_5(void) {
 	MakeDword	(x=0X7F048);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+}
+
+
+static Bytes_6(void) {
+        auto x;
+#define id x
+
 	MakeDword	(x=0X7F04C);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -30492,13 +30544,6 @@ static Bytes_5(void) {
 	MakeDword	(x=0X7F11C);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
-}
-
-
-static Bytes_6(void) {
-        auto x;
-#define id x
-
 	MakeDword	(x=0X7F120);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -31050,6 +31095,7 @@ static Bytes_6(void) {
 	MakeWord	(0XFFB0FA);
 	MakeWord	(0XFFB0FC);
 	MakeWord	(0XFFB0FE);
+	MakeName	(0XFFB0FE,	"CopyOf_Pid_1250_MAF_Frequency_Hz_DifferentUnits");
 	MakeByte	(0XFFB100);
 	MakeWord	(0XFFB102);
 	MakeWord	(0XFFB104);
@@ -31061,6 +31107,7 @@ static Bytes_6(void) {
 	MakeByte	(0XFFB10D);
 	MakeByte	(0XFFB10E);
 	MakeByte	(0XFFB110);
+	MakeName	(0XFFB110,	"Maf_Fail_Bit_Flags");
 	MakeByte	(0XFFB111);
 	MakeByte	(0XFFB112);
 	MakeByte	(0XFFB113);
@@ -31071,17 +31118,42 @@ static Bytes_6(void) {
 	MakeByte	(0XFFB118);
 	MakeWord	(0XFFB11A);
 	MakeWord	(0XFFB11C);
+	MakeName	(0XFFFF81CC,	"Fault_Unknown_3");
+	MakeRptCmt	(0XFFFF8250,	" This seems similar to Subaru's IAM value, but it's backward?");
+	MakeName	(0XFFFF8250,	"IgnitionAdvanceMultiplier");
+	MakeName	(0XFFFF8800,	"Fault_Unknown_2");
+	MakeName	(0XFFFF8802,	"Fault_Bit1MAF");
 	MakeName	(0XFFFF9012,	"EnginePowerMode");
 	MakeName	(0XFFFF9352,	"Pid_1940_TransmissionOilTemperature");
+	MakeName	(0XFFFF967C,	"IgnitionAdvance_MixedHighAndLowOctane");
+	MakeName	(0XFFFF9682,	"Pid_000D_IgnitionTimingAdvance");
+	MakeName	(0XFFFF968A,	"Copy_Of_Pid_000E_IgnitionTimingAdvance_2");
+	MakeName	(0XFFFF968C,	"CopyOfHighOctaneSparkAdvance");
+	MakeName	(0XFFFF9690,	"Fault_Unknown_4");
+	MakeName	(0XFFFF969A,	"FixedPointIgnitionAdvanceMultiplier");
+	MakeName	(0XFFFF96CC,	"Copy_Of_Pid_000E_IgnitionTimingAdvance");
+	MakeName	(0XFFFF96D0,	"IgnitionAdvanceMultipler_ECT_Compensation");
 	MakeName	(0XFFFF9A5E,	"Pid_12C5_Fuel_Level_Percent");
+	MakeName	(0XFFFF9C6E,	"Raw_VE_2");
+	MakeRptCmt	(0XFFFFA0C0,	"                 = RPM * 2?");
+	MakeWord	(0XFFFFA0C0);
+	MakeName	(0XFFFFA0C0,	"Pid_000C_RPM");
 	MakeName	(0XFFFFA1C0,	"Pid_0011_TPS_Alternate");
 	MakeName	(0XFFFFA686,	"Bit_5_Is_MAF_Related");
 	MakeName	(0XFFFFA6CE,	"Pid_1151_TPS");
 	MakeName	(0XFFFFA842,	"Pid_0010_MAF");
 	MakeName	(0XFFFFA844,	"Pid_1250_MAF_Frequency_Hz");
+	MakeName	(0XFFFFAAF4,	"RpmScaled");
+	MakeRptCmt	(0XFFFFABCC,	"X*.00390625 = MPH");
+	MakeName	(0XFFFFABCC,	"VehicleSpeed");
+	MakeName	(0XFFFFABCE,	"Pid_000D_VehicleSpeed");
 	MakeName	(0XFFFFACF6,	"Copy_Of_Pid_000B_MAP");
+	MakeName	(0XFFFFADB4,	"Pid_000B_MAP_By_Other_Means");
+	MakeName	(0XFFFFADB6,	"Copy_Of_Pid_000B_MAP_2");
 	MakeRptCmt	(0XFFFFADB8,	"MAP, in units of \"kPa / 51\" or \"bar / 5100.\"  So, 5100 = 1 bar.");
 	MakeName	(0XFFFFADB8,	"Pid_000B_MAP");
+	MakeName	(0XFFFFAE90,	"MAF_High_Fail_Count");
+	MakeName	(0XFFFFAE94,	"MAF_Low_Fail_Count");
 	MakeName	(0XFFFFF2BC,	"Sensor_MAP_ADC");
 	MakeName	(0XFFFFF2C2,	"Pid_19AD_TransmissionTemperatureSensor");
 	MakeName	(0XFFFFF2FC,	"Pid_1143_TPS");
@@ -31901,6 +31973,8 @@ static Functions_0(void) {
 	MakeFrame(0X36284, 0X6, 4, 0);
 	MakeFunction    (0X36384,0X3671A);
 	SetFunctionFlags(0X36384,0);
+	MakeNameEx(0X363EC, "IdleInDrive?", SN_LOCAL);
+	MakeNameEx(0X36418, "OpenThrottle", SN_LOCAL);
 	MakeFunction    (0X3671A,0X36772);
 	SetFunctionFlags(0X3671A,0);
 	MakeFunction    (0X36772,0X36796);
@@ -31918,6 +31992,7 @@ static Functions_0(void) {
 	SetFunctionFlags(0X36AA6,0);
 	MakeFunction    (0X36B6C,0X37196);
 	SetFunctionFlags(0X36B6C,0);
+	MakeNameEx(0X37182, "StoreAndReturn_d4", SN_LOCAL);
 	MakeFunction    (0X37196,0X3735C);
 	SetFunctionFlags(0X37196,0x10);
 	MakeFrame(0X37196, 0X8, 4, 0);
@@ -31978,6 +32053,8 @@ static Functions_0(void) {
 	SetFunctionFlags(0X3897A,0);
 	MakeFunction    (0X389F6,0X38AEC);
 	SetFunctionFlags(0X389F6,0);
+	MakeNameEx(0X38ABA, "StoreAndExit", SN_LOCAL);
+	MakeNameEx(0X38AE6, "Finished", SN_LOCAL);
 	MakeFunction    (0X38AEC,0X38C0C);
 	SetFunctionFlags(0X38AEC,0);
 	MakeFunction    (0X38C0C,0X38C2E);
@@ -31985,6 +32062,8 @@ static Functions_0(void) {
 	MakeFunction    (0X38C2E,0X38DC6);
 	SetFunctionFlags(0X38C2E,0x10);
 	MakeFrame(0X38C2E, 0X6484, 4, 0);
+	MakeNameEx(0X38DB8, "Set_IAM_Zero", SN_LOCAL);
+	MakeNameEx(0X38DBA, "Store_IAM", SN_LOCAL);
 	MakeFunction    (0X38DC6,0X38E28);
 	SetFunctionFlags(0X38DC6,0x10);
 	MakeFrame(0X38DC6, 0X4, 4, 0);
@@ -33233,6 +33312,8 @@ static Functions_0(void) {
 	SetFunctionFlags(0X64B92,0);
 	MakeFunction    (0X64BA8,0X64C42);
 	SetFunctionFlags(0X64BA8,0);
+	MakeNameEx(0X64BB4, "ClearStuff", SN_LOCAL);
+	MakeNameEx(0X64C40, "SkipTest", SN_LOCAL);
 	MakeFunction    (0X64C42,0X64CFE);
 	SetFunctionFlags(0X64C42,0);
 	MakeFunction    (0X64CFE,0X64DB6);
