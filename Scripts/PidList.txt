@@ -1,0 +1,268 @@
+0000 $01 - $20 Bit Map Flash Constant
+0001 Number of Emission Related DTC
+0003 Fuel System Status
+0004 Calculated Load
+0005 Engine Coolant Temperature
+0006 Short Term Fuel Trim Bank 1
+0007 Long Term Fuel Trim Bank 1
+0008 Short Term Fuel Trim Bank 2
+0009 Long Term Fuel Trim Bank 2
+000B Manifold Absolute Pressure
+000C Engine RPM High Resolution (RPM x4)
+000D Speed in KPH
+000E Ignition Timing Advance
+000F Intake Air Temperature
+0010 Mass Air Flow
+0011 Throttle Position Sensor %
+0012 Commanded Secondary Air
+0013 Report O2 Sensor Configuration
+0014 O2 B1S1
+0015 O2 B1S2
+0018 O2 B2S1
+0019 O2 B2S2
+001C OBD Requirements
+0020 $21 - $50 Bit Map Flash Constant
+0022 
+0023 
+0024 
+0025 
+0026 
+0027 
+0028 
+0029 
+002B 
+002C 
+002D 
+0030 
+0031 
+1104 
+1105 
+1106 VTD Fuel Disable
+1107 Throttle At Idle
+1108 
+1109 
+110A 
+110C 
+110D 
+110E 
+110F Rear O2 Current Non-Volatile
+1110 
+1111 
+1112 
+1113 
+1114 
+1115 
+1116 
+1140 Mass Air Flow Sensor 1
+1141 Ignition Voltage
+1142 
+1143 Throttle Position Sensor
+1144 Air Conditioner Pressure
+1145 
+1146 O2 Sensor - Bank 1 Sensor 2 (mv)
+1148 O2 Sensor - Bank 2 Sensor 1 (mv)
+1149 O2 Sensor - Bank 2 Sensor 2 (mv)
+114E Fuel Tank Pressure
+1151 Throttle Position Sensor Normalized in Degrees / Percent
+115E CAM Engine Speed Activity
+116F Start Up Engine Coolant Temperature
+1170 Controlled Canister Perge Solenoid
+1171 EGR Duty Cycle
+1176 Current IAC Memory
+1179 IAC Motor Position
+1190 Fuel Trim Cell
+1192 Desired Idle Speed
+119D Barometric Pressure
+119E Air Fuel Ratio
+11A1 Engine Run Time
+11A3 
+11BB EGR Closed Position Volts
+11BD EGR Test Count
+11C0 EGR Decel Filter
+11C1 EGR Position Error
+11C2 
+11C4 
+11D5 
+11D7 O2 Response Lean to Rich Switches Bank 1 Sensor 1
+11D8 Catalyst Monitor EWMA Sample Counter Bank 1
+11DD 
+11DE 
+11E0 
+11E3 LOW RESOLUTION SIGNAL
+11E4 Cylinder Mode Misfire Index
+11E6 Revolution Mode Misfire Index (Balance Time)
+11E9 
+11EA Misfire Current Cylinder #5
+11EB Misfire Current Cylinder #6
+11EC Misfire Current Cylinder #7
+11ED Misfire Current Cylinder #8
+11F3 Total Misfires per Test Special
+11F8 Misfire History Cylinder #5
+11F9 Misfire History Cylinder #6
+11FA Misfire History Cylinder #7
+11FB Misfire History Cylinder #8
+1200 Total Misfire Current Count
+1201 Misfire History Cylinder #1
+1202 Misfire History Cylinder #2
+1203 Misfire History Cylinder #3
+1204 Misfire History Cylinder #4
+1205 Misfire Current Cylinder #2
+1206 Misfire Current Cylinder #1
+1207 Misfire Current Cylinder #3
+1208 Misfire Current Cylinder #4
+120A Short Term Fuel Trim Bank 1
+120B Long Term Fuel Trim Bank 1
+120C Short Term Fuel Trim Bank 2
+1212 Rich/Lean to Lean/Rich Ratio Sen. 1
+1216 O2 Response Rich to Lean Switches Bank 2 Sensor 1
+1217 O2 Response Lean to Rich Switches Bank 2 Sensor 1
+121A O2 Response Rich to Lean Switches Bank 1 Sensor 1
+121C O2 Average Bias Voltage
+121D 
+1221 
+1226 
+1227 Total Misfire Failures Since First Fail
+1228 Total Misfire Passes Since First Fail
+122A Cycles of Misfire Data
+1232 Warm up cycles without an emission fault
+1233 Warm up cycles without a non-emission fault
+1234 Mileage Since Last Code Clear
+1235 Mileage Since First Fail
+1236 Mileage Since Last Fail
+1237 Fail Counter
+1238 Pass Counter
+1239 No Results Counter
+123A Long Term Fuel Trim Bank 2
+123B 
+123C 
+123D REAR O2 FAIL TIME LEFT
+123F 
+1240 
+1241 
+1242 
+1243 
+1244 
+1245 
+1246 O2 Response Rich to Lean Average Time Bank 2 Sensor 1
+1247 
+1248 Catalyst Monitor Average Deviation
+1249 
+124A Catalyst Monitor Filtered Deviation Difference
+124B 
+124D 
+124E 
+1250 MAF Frequency (Hz)
+1257 
+1258 Rear O2 Time to Activity
+1259 
+125A Injector Pulse Width Average Bank 1
+125B Injector Pulse Width Average Bank 2
+125D Knock Retard
+125E Knock Sensor Active Counter
+125F 
+1260 
+1261 
+1262 Long Term Fuel Trim Decal
+1263 Long Term Fuel Trim Idle
+1264 Long Term Fuel Trim Cruise
+1265 Long Term Fuel Trim Accel
+1266 Purge Long Term Fuel Trim #1
+1267 Purge Long Term Fuel Trim #2
+1268 Purge Long Term Fuel Trim #3
+1269 Purge Long Term Fuel Trim #4
+126A 
+126B 
+126C 
+126D 
+126E 
+126F 
+1270 
+1271 
+1272 
+1273 
+1274 
+1275 
+1276 CRANKSHAFT POSITION SENSOR LOW RESOLUTION ANGLE
+1277 
+1278 Average Air Flow When Rear O2 Went Active
+1279 
+127A 
+127C 
+127D 
+127E 
+127F 
+1280 
+1281 
+1282 
+1283 Air Pump Diag. Percent Lean Time
+1284 Air Pump Diag. Percent Rich Time
+1285 
+1286 Air Pump Diagnostic Active Time
+1287 
+1288 
+1289 
+128A 
+128B 
+128C 
+128D 
+128E 
+12BE 
+12BF 
+12C0 
+12C1 
+12C5 Fuel Level Percentage
+1601 A/C Evap Temp
+1602 Engine Oil Temperature
+1920 
+1921 
+1922 
+1923 
+1924 
+1925 
+1926 
+1927 
+1928 
+1929 
+192A 
+192B 
+192C 
+1940 Transmission Oil Temperature
+1941 Transmission Input Shaft Speed
+1942 Transmission Output Shaft Speed
+1970 TCC PWM Duty Cycle
+1971 
+1972 PC (Pressure Control) Solenoid Duty Cycle
+1991 TCC Slip Speed
+1992 Time of Latest Shift
+1993 Time of Latest 1-2 Shift
+1994 Time of Latest 2-3 Shift
+1995 Time of Latest 3-4 Shift
+1996 Shift Time Error for Latest Shift
+1997 Shift Time Error for 1-2 Shift
+1998 Shift Time Error for 2-3 Shift
+1999 Shift Time Error for 3-4 Shift
+199B 
+199C Current TAP (Transmission Adaptive Pressure) Cell
+199D Transmission Pressure
+199E Pressure Control Actual Current
+199F Pressure Control Reference Circuit
+19A0 Shift Delay
+19AD Transmission Temp Sensor
+19F3 Transmission Temp
+19F4 Gear Box Ratio
+19F5 Current Gear
+1A01 Z-Body: Steady State Ratio Fail Counter
+FC00 
+FC01 
+FC02 
+FC05 
+FC1F 
+FC20 
+FC21 
+FC22 
+FC23 
+FC24 
+FC25 
+FC26 
+FC27 
+FC28 

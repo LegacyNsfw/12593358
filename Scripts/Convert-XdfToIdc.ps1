@@ -7,23 +7,31 @@ $unused = $builder.AppendLine("auto nameFlags = 0;")
 
 [xml]$xdf = Get-Content $SourceXdf
 
-function Sanitize-Name
+function Sanitize-Name ([string] $Name)
 {
-	Param($Input)
-
 	$output = ""
+	$lastChar = " "
 
-	foreach ($c in $Input)
+	foreach ($c in ($Name -split ''))
 	{
-	$c
-		if ($c -eq " ")
+		if (($c -eq " ") -or ($c -eq "_") -or ($c -eq "-"))
 		{
-			$output += "_"
+			if ($lastChar.ToString() -ne "_")
+			{
+				$output += "_"
+			}
+			$lastChar = "_"
 		}
 		
+		if ($c -eq "")
+		{
+			continue
+		}
+
 		if ([System.Char]::IsLetter($c) -or [System.Char]::IsNumber($c))
 		{
 			$output += $c
+			$lastChar = $c.ToString();
 		}
 	}
 
